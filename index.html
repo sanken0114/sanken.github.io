@@ -6,101 +6,129 @@
 <title>三城 賢祐のプロフィール</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #eef0fb;
-    --ink: #15173d;
-    --blue: #2f3de0;
-    --pink: #ff7aa8;
-    --sun: #ffd84a;
-    --card: #ffffff;
+    --bg: #f4efe4;      /* 生成り */
+    --ink: #2a2723;     /* 墨 */
+    --ai: #1f4e79;      /* 藍 */
+    --shu: #c8382b;     /* 朱 */
+    --yamabuki: #e0a526;/* 山吹 */
+    --line: #cfc6b3;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #12132b;
-      --ink: #f1f2ff;
-      --blue: #8a93ff;
-      --card: #1d1f45;
+      --bg: #101a28;    /* 藍染 */
+      --ink: #eee7d6;
+      --ai: #8fb4d9;
+      --shu: #e5604f;
+      --yamabuki: #e8b64a;
+      --line: #34425a;
     }
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
   body {
     margin: 0;
     background: var(--bg);
     color: var(--ink);
-    font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Meiryo", sans-serif;
-    line-height: 1.9;
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    line-height: 2;
     font-size: 17px;
   }
   main {
-    max-width: 760px;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 72px 24px 48px;
+    padding: 64px 28px 48px;
   }
 
+  /* 縦書きの名前: このページで一番目立たせる部分 */
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 28px;
+    min-height: 360px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid var(--line);
+  }
   .name {
-    font-size: clamp(56px, 16vw, 120px);
-    font-weight: 900;
-    line-height: 1.1;
+    writing-mode: vertical-rl;
+    font-size: clamp(64px, 18vw, 120px);
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    line-height: 1.2;
     margin: 0;
-    letter-spacing: -0.02em;
-    color: var(--blue);
-    text-shadow: 5px 5px 0 var(--sun);
+    color: var(--ai);
+  }
+  .side {
+    writing-mode: vertical-rl;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding-top: 12px;
   }
   .tagline {
-    display: inline-block;
-    margin: 28px 0 0;
-    padding: 6px 18px;
-    background: var(--ink);
-    color: var(--bg);
-    border-radius: 999px;
-    font-weight: 700;
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: 0.3em;
   }
-
-  section { margin-top: 72px; }
-  h2 {
+  .hanko {
+    writing-mode: horizontal-tb;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    background: var(--shu);
+    color: #fff;
+    font-weight: 800;
     font-size: 28px;
-    font-weight: 900;
-    margin: 0 0 20px;
-    display: inline-block;
-    background: linear-gradient(transparent 62%, var(--pink) 62%);
+    border-radius: 4px;
+    transform: rotate(-4deg);
   }
-  p { margin: 0 0 1em; max-width: 36em; }
 
-  .tags { display: flex; flex-wrap: wrap; gap: 12px; padding: 0; margin: 0; list-style: none; }
-  .tags li {
-    padding: 8px 20px;
-    background: var(--card);
-    border: 3px solid var(--ink);
-    border-radius: 14px;
-    font-weight: 700;
+  section { margin-top: 64px; }
+  h2 {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 0 20px;
+    padding-left: 14px;
+    border-left: 5px solid var(--shu);
+    letter-spacing: 0.1em;
   }
-  .tags li:nth-child(3n+1) { border-radius: 999px; }
-  .tags li:nth-child(3n+2) { border-radius: 6px; transform: rotate(-2deg); }
-  .tags li:nth-child(3n)   { background: var(--sun); color: #15173d; }
+  p { margin: 0 0 1em; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
+  .tags li {
+    padding: 4px 18px;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    letter-spacing: 0.08em;
+  }
+  .tags li:nth-child(3n) { border-color: var(--yamabuki); background: var(--yamabuki); color: #2a2723; }
 
   .links { display: flex; flex-wrap: wrap; gap: 14px; }
   .links a {
     display: inline-block;
-    padding: 12px 28px;
-    background: var(--blue);
-    color: #fff;
-    font-weight: 700;
+    padding: 10px 32px;
+    background: var(--ai);
+    color: var(--bg);
     text-decoration: none;
-    border: 3px solid var(--ink);
-    border-radius: 14px;
-    box-shadow: 4px 4px 0 var(--ink);
-    transition: transform .12s, box-shadow .12s;
+    letter-spacing: 0.15em;
+    border-radius: 2px;
+    transition: background .2s;
   }
-  .links a:hover { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
-  .links a:focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; }
-  @media (prefers-color-scheme: dark) {
-    .links a { color: #12132b; }
-  }
+  .links a:hover { background: var(--shu); color: #fff; }
+  .links a:focus-visible { outline: 3px solid var(--yamabuki); outline-offset: 3px; }
 
-  footer { margin-top: 96px; font-size: 14px; opacity: .7; }
+  footer {
+    margin-top: 88px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    opacity: .75;
+    text-align: center;
+  }
   @media (prefers-reduced-motion: reduce) {
     .links a { transition: none; }
   }
@@ -108,23 +136,28 @@
 </head>
 <body>
 <main>
-  <h1 class="name">三城<br>賢祐</h1>
-  <p class="tagline">わあ</p>
+  <header class="hero">
+    <div class="side">
+      <p class="tagline">waa</p>
+      <span class="hanko">賢</span>
+    </div>
+    <h1 class="name">三城賢祐</h1>
+  </header>
 
   <section>
     <h2>自己紹介</h2>
-    <p>三城 賢祐です。</p>
-    <p>好きなこととか書くところにする</p>
+    <p>三城賢祐です。</p>
+    <p>好きなこととか書くところ。</p>
   </section>
 
   <section>
     <h2>スキル</h2>
     <ul class="tags">
-      <li>waaaaaa</li>
-      <li>waaaa</li>
-      <li>waa</li>
       <li>wa</li>
       <li>waa</li>
+      <li>waaa</li>
+      <li>waaaa</li>
+      <li>GitHub</li>
       <li>勉強中のもの</li>
     </ul>
   </section>
@@ -133,11 +166,11 @@
     <h2>リンク</h2>
     <div class="links">
       <a href="https://github.com/sanken0114">GitHub</a>
-      <a href="waaaa">waa</a>
+      <a href="waa">waaa</a>
     </div>
   </section>
 
-  <footer> waaa</footer>
+  <footer>© 2026 三城 賢祐</footer>
 </main>
 </body>
 </html>
