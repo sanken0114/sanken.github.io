@@ -45,20 +45,28 @@
   .hero {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 28px;
+    align-items: center;
+    gap: clamp(8px, 3vw, 28px);
     min-height: 360px;
     padding-bottom: 56px;
     border-bottom: 1px solid var(--line);
   }
   .name {
     writing-mode: horizontal-tb;
-    font-size: clamp(64px, 18vw, 120px);
+    white-space: nowrap;
+    font-size: clamp(28px, 9vw, 72px);
     font-weight: 800;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.06em;
     line-height: 1.2;
     margin: 0;
     color: var(--ai);
+  }
+  .portrait {
+    display: block;
+    width: clamp(96px, 30vw, 220px);
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 4px;
   }
   .side {
     writing-mode: vertical-rl;
@@ -138,6 +146,7 @@
 <main>
   <header class="hero">
     <h1 class="name">三城 賢祐</h1>
+    <img class="portrait" src="profile.jpeg" alt="三城賢祐の写真">
   </header>
 
   <section>
