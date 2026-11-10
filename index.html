@@ -105,6 +105,33 @@
   }
   p { margin: 0 0 1em; }
 
+  .history {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 20px;
+    border-left: 1px solid var(--line);
+  }
+  .history li {
+    position: relative;
+    padding: 0 0 24px 18px;
+  }
+  .history li:last-child { padding-bottom: 0; }
+  .history li::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: -25px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--ai);
+  }
+  .history strong {
+    display: block;
+    color: var(--ai);
+  }
+  .history p { margin: 0; }
+
   .tags { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
   .tags li {
     padding: 4px 18px;
@@ -148,10 +175,29 @@
 
   <section>
     <h2>自己紹介</h2>
-    <p>三城賢祐です。</p>
-    <p>好きなこととか書くところ。何書こうかな。<br>
-      
-    </p>
+    <p>三城賢祐です。小学生のころからロボットプログラミングに親しみ、ものづくりやチームでの活動に取り組んできました。</p>
+  </section>
+
+  <section>
+    <h2>これまでの歩み</h2>
+    <ol class="history">
+      <li>
+        <strong>小学5年生</strong>
+        <p>ロボットプログラミングを習い始める。</p>
+      </li>
+      <li>
+        <strong>中学1年生</strong>
+        <p>ロボットプログラミングの大会に出場。</p>
+      </li>
+      <li>
+        <strong>2023年（高校3年生）</strong>
+        <p>第2回高校生SIerリーグに出場し、オーディエンス賞・技術賞を受賞。</p>
+      </li>
+      <li>
+        <strong>成人式実行委員会</strong>
+        <p>副委員長を務める。</p>
+      </li>
+    </ol>
   </section>
 
   <section>
